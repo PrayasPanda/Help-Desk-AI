@@ -26,7 +26,9 @@ app = FastAPI(title="QuickDesk API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
+    # accept the configured origin plus localhost/127.0.0.1 on any port for local dev
     allow_origins=[settings.frontend_origin],
+    allow_origin_regex=r"http://(localhost|127\.0\.0\.1)(:\d+)?",
     allow_methods=["*"],
     allow_headers=["*"],
 )
