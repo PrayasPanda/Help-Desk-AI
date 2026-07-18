@@ -58,7 +58,7 @@ export default function Login() {
           </a>
         </p>
         <p className="muted center small">
-          Seeded demo users: agent@quickdesk.local / agentpass123 · employee@quickdesk.local / employeepass123
+          Seeded demo users: agent@quickdesk.io / agentpass123 · employee@quickdesk.io / employeepass123
         </p>
       </form>
     </div>

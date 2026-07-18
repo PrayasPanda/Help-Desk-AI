@@ -10,8 +10,8 @@ from app.models import Role, User
 from app.security import hash_password
 
 USERS = [
-    ("agent@quickdesk.local", "agentpass123", Role.agent),
-    ("employee@quickdesk.local", "employeepass123", Role.employee),
+    ("agent@quickdesk.io", "agentpass123", Role.agent),
+    ("employee@quickdesk.io", "employeepass123", Role.employee),
 ]
 
 
