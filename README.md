@@ -4,6 +4,16 @@ An internal helpdesk where employees raise support tickets and support agents re
 
 **Stack:** FastAPI + SQLAlchemy + Postgres · React (Vite, TypeScript) · LangChain + Groq (`llama-3.3-70b-versatile`) · FastEmbed embeddings · SSE for real-time.
 
+## Screenshots
+
+| Employee — AI-suggested classification on submit | Agent — RAG draft grounded in the KB, with citation |
+|---|---|
+| ![Ticket with AI-suggested category and priority](docs/screenshots/02-ticket-ai-suggestion.png) | ![Agent ticket detail with AI-drafted reply and citation](docs/screenshots/05-agent-ai-draft.png) |
+
+| Agent dashboard — filters + search + live updates | Metrics — status/category, median resolution, override rate |
+|---|---|
+| ![Agent dashboard listing all tickets](docs/screenshots/04-agent-dashboard.png) | ![Metrics dashboard](docs/screenshots/07-metrics.png) |
+
 ## How to run locally
 
 Prereqs: Python 3.11+, Node 18+, Docker Desktop.

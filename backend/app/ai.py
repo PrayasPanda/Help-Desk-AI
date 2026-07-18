@@ -179,8 +179,9 @@ def draft_reply(title: str, description: str) -> dict:
         raw = llm.invoke(RAG_PROMPT.format(context=context, title=title, description=description)).content
         data = _extract_json(raw)
         draft = str(data.get("reply", "")).strip() or NO_KB_MESSAGE
-        # only accept citations that were actually in the retrieved context
-        citations = [c for c in data.get("citations", []) if c in allowed_titles]
+        # only accept citations that were in the retrieved context; dedupe
+        # (top-k can return several chunks of the same article)
+        citations = list(dict.fromkeys(c for c in data.get("citations", []) if c in allowed_titles))
         return {"draft": draft, "citations": citations}
     except Exception:
         log.exception("draft generation failed, returning top chunk verbatim")
